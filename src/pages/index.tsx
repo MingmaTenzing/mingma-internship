@@ -17,11 +17,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     
-      <Nav />
-      <Explore />
+     <div className='z-10'>
+     <Nav />
+
+     </div>
+    
+    <div className='z-1'>
+    <Explore />
       <Setup />
 
+
+    </div>
+     
       
 
     </main>
