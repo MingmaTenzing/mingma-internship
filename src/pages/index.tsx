@@ -21,19 +21,18 @@ export default function Home() {
       </Head>
    
    {/** NAV BAR */}
-     <div className='z-100'>
+   
      <Nav />
 
-     </div>
     
     {/** CONTENT */}
-    <div className='z-1'>
+  
     <Explore />
       <Setup />
       <HotCollections />
 
 
-    </div>
+
      
 
     </main>
