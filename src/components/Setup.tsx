@@ -6,13 +6,13 @@ function Setup() {
 
 
   return (
-    <div className="flex flex-col space-y-6 items-center justify-center  md:flex-row md:space-y-0 md:space-x-8">
+    <div className="flex flex-col  items-center justify-center  md:flex-row md:flex-wrap ">
 
       {/** SET UP YOUR WALLET **/}
 
     <div
    
-      className=" flex flex-col space-y-4 justify-center items-center"
+      className="m-4 flex flex-col space-y-4 justify-center items-center"
     >
       <div className=" group relative overflow-hidden h-[300px]  md:h-[260px] w-[80%] md:w-[360px]   bg-purple bg-opacity-10 hover:bg-darkpurple hover:bg-opcity-100 hover:text-white transtion-all ease-linear duration-500 rounded-md  hover:first">
         <div className="p-5 mt-10 space-y-3">
@@ -37,12 +37,12 @@ function Setup() {
 
     <div
    
-      className=" flex flex-col space-y-4 justify-center items-center"
+      className="m-4  flex flex-col space-y-4 justify-center items-center"
     >
       <div className=" group relative overflow-hidden h-[300px]  md:h-[260px] w-[80%] md:w-[360px]   bg-purple bg-opacity-10 hover:bg-darkpurple hover:bg-opcity-100 hover:text-white transtion-all ease-linear duration-500 rounded-md  hover:first">
         <div className="p-5 mt-10 space-y-3">
           <CloudArrowUpIcon className="w-[50px] bg-purple text-white p-1 rounded-md" />
-          <h1 className="font-bold text-lg">Add your Nft's</h1>
+          <h1 className="font-bold text-lg">Add your Nft&apos;s</h1>
     
             <p className="  text-gray-400  transition-all ease-linear duration-500 group-hover:text-white ">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -64,12 +64,12 @@ function Setup() {
 
     <div
    
-      className=" flex flex-col space-y-4 justify-center items-center"
+      className=" m-4  flex flex-col space-y-4 justify-center items-center"
     >
       <div className=" group relative overflow-hidden h-[300px]  md:h-[260px]  w-[80%] md:w-[360px]   bg-purple bg-opacity-10 hover:bg-darkpurple hover:bg-opcity-100 hover:text-white transtion-all ease-linear duration-500 rounded-md  hover:first">
         <div className="p-5  mt-10 space-y-3">
           <TagIcon className="w-[50px] bg-purple  text-white p-1 rounded-md" />
-          <h1 className="font-bold text-lg">Sell your NFT's</h1>
+          <h1 className="font-bold text-lg">Sell your NFT&apos;s</h1>
     
             <p className="  text-gray-400  transition-all ease-linear duration-500 group-hover:text-white ">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem

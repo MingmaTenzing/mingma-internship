@@ -11,7 +11,7 @@ function Explore() {
       <p className=" text-purple font-bold ">GIGALAND MARKET</p>
       <h1 className="text-[40px] md:text-5xl leading-10  text font-[700]">Create, sell or collect digital items.</h1>
      <p className=" opacity-70">Unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique and therefore not interchangeable</p>
-    <button className=" bg-purple text-white p-1 px-10 rounded-lg "  >Explore</button  >
+    <button className=" bg-purple text-white p-1 px-10 rounded-lg   hover:shadow-lg  hover:shadow-purple  transition-all ease-linear duration-200 "  >Explore</button  >
 
       </div>
 

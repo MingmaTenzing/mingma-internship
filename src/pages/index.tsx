@@ -5,6 +5,8 @@ import styles from '@/styles/Home.module.css'
 import Nav from '@/components/Nav'
 import Explore from '@/components/Explore'
 import Setup from '@/components/Setup'
+import HotCollections from '@/components/HotCollections'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,19 +19,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <div className='z-10'>
+   
+   {/** NAV BAR */}
+     <div className='z-100'>
      <Nav />
 
      </div>
     
+    {/** CONTENT */}
     <div className='z-1'>
     <Explore />
       <Setup />
+      <HotCollections />
 
 
     </div>
      
-      
 
     </main>
   )
