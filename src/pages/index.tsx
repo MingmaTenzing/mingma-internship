@@ -6,6 +6,7 @@ import Nav from '@/components/Nav'
 import Explore from '@/components/Explore'
 import Setup from '@/components/Setup'
 import HotCollections from '@/components/HotCollections'
+import NewItems from '@/components/NewItems'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ export default function Home() {
     <Explore />
       <Setup />
       <HotCollections />
+      <NewItems />
 
 
 
