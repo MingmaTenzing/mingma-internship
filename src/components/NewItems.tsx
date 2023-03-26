@@ -62,7 +62,7 @@ function NewItems() {
   
 
   return (
-    <div className="mt-20">
+    <div className="mt-[120px]">
         <div className="flex flex-col items-center space-y-3">
 
          <h1 className=" font-[800] text-3xl text-center">New Items</h1>
