@@ -8,6 +8,7 @@ import Setup from '@/components/Setup'
 import HotCollections from '@/components/HotCollections'
 import NewItems from '@/components/NewItems'
 import TopSellers from '@/components/TopSellers'
+import BrowseCategory from '@/components/BrowseCategory'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -34,6 +35,7 @@ export default function Home() {
       <HotCollections />
       <NewItems />
       <TopSellers />
+      <BrowseCategory/>
 
 
 
