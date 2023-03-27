@@ -4,7 +4,7 @@ import { MinusIcon, MusicalNoteIcon, PhotoIcon, PlayCircleIcon } from "@heroicon
 
 function BrowseCategory() {
   return (
-    <div className="mt-[120px]">
+    <div className="mt-[120px] px-5">
          <div className="flex flex-col items-center space-y-3">
         <h1 className=" font-[800] text-3xl text-center">Browse Category</h1>
         <div className="w-[100px] h-[1px] bg-purple"></div>
