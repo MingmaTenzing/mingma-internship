@@ -9,6 +9,7 @@ import HotCollections from '@/components/HotCollections'
 import NewItems from '@/components/NewItems'
 import TopSellers from '@/components/TopSellers'
 import BrowseCategory from '@/components/BrowseCategory'
+import Footer from '@/components/Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -36,6 +37,7 @@ export default function Home() {
       <NewItems />
       <TopSellers />
       <BrowseCategory/>
+      <Footer />
 
 
 
