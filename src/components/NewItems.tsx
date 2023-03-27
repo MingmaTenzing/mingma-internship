@@ -6,13 +6,20 @@ import NewItem from "@/utilities/NewItem";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import NewItemsLoading from "@/utilities/NewItemsLoading";
 function NewItems() {
 
     const [items, setItems] = useState<[]>([]);
+    const [loading, setLoading] = useState<Boolean>(false);
     useEffect(() => {
+      setLoading(true);
         async function getNewitems () {
             const {data} = await axios.get('https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems')
             setItems(data);
+            setTimeout(() => {
+              setLoading(false);
+
+            },3000)
     
         }
     
@@ -70,17 +77,36 @@ function NewItems() {
 
           
         </div>
-        <div className="max-w-[80%] m-auto">
-        <Slider {...settings} >
+       
+
+        {
+          loading? (
+
+            <div  className="max-w-[80%] m-auto">
+              <Slider {...settings} >
+              {
+                new Array(6).fill(0).map((_, index) => <NewItemsLoading key={index} />)
+              }
+
+              </Slider>
 
 
-       {
-        items.map((item: { id: Key}) => <NewItem key={item.id} item={item} />)
-       }
-        </Slider>
 
+</div>
+          ) : ( <div className="max-w-[80%] m-auto">
+          <Slider {...settings} >
+  
+  
+         {
+          items.map((item: { id: Key}) => <NewItem key={item.id} item={item} />)
+         }
+          </Slider>
+  
+  
+          </div>)
+        }
 
-        </div>
+     
 
 
            
