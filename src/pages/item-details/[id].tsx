@@ -1,25 +1,27 @@
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import { EyeIcon, HeartIcon } from "@heroicons/react/24/solid";
+import AuthorProfile from "@/utilities/AuthorProfile";
+import { CheckIcon, EyeIcon, HeartIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import nftimg from "../../assests/nftImage.jpg";
-
+import image from "../../assests/author_thumbnail.jpg";
+import eth from "../../assests/ethereum.svg"
 function itemDetails() {
   return (
     <div>
       <Nav />
-      <div className="p-4 mt-20">
+      <div className="p-4 px-8 mt-20 md:mt-[140px] md:flex md:items-center md:space-x-5">
         <div>
           <Image
             src={nftimg}
             alt="nft image"
             width={450}
             height={450}
-            className="w-[400px] h-[400px] object-cover"
+            className="w-[400px] max-w-[400px] h-[400px] md:h-[600px] object-cover"
           />
         </div>
 
-        <div className="">
+        <div className="space-y-4 mt-4">
           <h1 className="text-[36px] font-bold"> The Truth #624</h1>
           <div className="flex space-x-2">
             <div className="flex text-gray-500 justify-center items-center space-x-2 bg-purple w-[80px] px-2 py-1 bg-opacity-20">
@@ -30,12 +32,65 @@ function itemDetails() {
             </div>
           </div>
 
-          <p>
+          <p className="text-gray-600">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
             dicta sunt explicabo.
           </p>
+
+          <div className="space-y-4 pb-2">
+            <h1 className="font-bold">Owner</h1>
+            <div className="flex items-center space-x-5">
+
+            <div className="relative z-10">
+
+<Image src={image} alt='author' width={200} height={200} className=' cursor-pointer w-14   rounded-full border-purple  hover:border-4  transition-all ease-linear duration-200' />
+<CheckIcon className="w-5 absolute top-9 left-8  bg-purple text-white rounded-full" />
+</div>
+<div>
+  <p className="font-bold">Jimmy Wright</p>
+</div>
+            </div>
+
+
+    
+          
+          </div>
+          <div className="space-y-4 pb-2">
+            <h1 className="font-bold">Creator</h1>
+            <div className="flex items-center space-x-5">
+
+            <div className="relative z-10">
+
+<Image src={image} alt='author' width={200} height={200} className=' cursor-pointer w-14   rounded-full border-purple  hover:border-4  transition-all ease-linear duration-200' />
+<CheckIcon className="w-5 absolute top-9 left-8  bg-purple text-white rounded-full" />
+</div>
+<div>
+  <p className="font-bold">Stacy Long</p>
+</div>
+            </div>
+
+
+    
+          
+          </div>
+          <div className="space-y-4 pb-2">
+            <h1 className="font-bold">Price</h1>
+            <div className="flex items-center space-x-2">
+
+          <div>
+            <Image src={eth} alt="" width={200} height={650} className='w-6' />
+              </div> 
+<div>
+  <p className="font-bold">9.06</p>
+</div>
+            </div>
+
+
+    
+          
+          </div>
         </div>
       </div>
 
