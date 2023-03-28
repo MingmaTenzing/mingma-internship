@@ -2,7 +2,7 @@ import { CheckIcon, HeartIcon } from "@heroicons/react/24/solid"
 
 function NewItemsLoading() {
   return (
-    <div className=" animate-pulse hover:shadow-lg transition-shadow ease-linear duration-500 group mt-6 relative  md:max-w-[300px] m-auto border p-4 rounded-lg">
+    <div className=" animate-pulse hover:shadow-lg transition-shadow ease-linear duration-500 group mt-6 relative w-[300px] m-auto border p-4 rounded-lg">
     <div className="relative z-10">
 
     <div className="w-8 h-8 absolute top-3 left-3  bg-gray-400 text-white rounded-full"></div>

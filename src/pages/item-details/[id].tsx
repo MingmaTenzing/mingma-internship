@@ -10,18 +10,18 @@ function itemDetails() {
   return (
     <div>
       <Nav />
-      <div className="p-4 px-8 mt-20 md:mt-[140px] md:flex md:items-center md:space-x-5">
+      <div className="p-8  mt-20 md:mt-[140px] md:flex md:justify-center  md:space-x-8 ">
         <div>
           <Image
             src={nftimg}
             alt="nft image"
             width={450}
             height={450}
-            className="w-[400px] max-w-[400px] h-[400px] md:h-[600px] object-cover"
+            className="w-[350px] h-[400px] md:h-[600px]  md:w-[600px] md:max-w-[400px] lg:w-[600px] lg:max-w-[600px] object-cover"
           />
         </div>
 
-        <div className="space-y-4 mt-4">
+        <div className="space-y-4 mt-4 md:mt-0 lg:w-[600px]">
           <h1 className="text-[36px] font-bold"> The Truth #624</h1>
           <div className="flex space-x-2">
             <div className="flex text-gray-500 justify-center items-center space-x-2 bg-purple w-[80px] px-2 py-1 bg-opacity-20">
@@ -49,7 +49,7 @@ function itemDetails() {
 <CheckIcon className="w-5 absolute top-9 left-8  bg-purple text-white rounded-full" />
 </div>
 <div>
-  <p className="font-bold">Jimmy Wright</p>
+  <p className="font-bold hover:text-purple">Jimmy Wright</p>
 </div>
             </div>
 
@@ -67,7 +67,7 @@ function itemDetails() {
 <CheckIcon className="w-5 absolute top-9 left-8  bg-purple text-white rounded-full" />
 </div>
 <div>
-  <p className="font-bold">Stacy Long</p>
+  <p className="font-bold hover:text-purple">Stacy Long</p>
 </div>
             </div>
 

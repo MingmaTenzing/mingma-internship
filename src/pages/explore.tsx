@@ -1,30 +1,49 @@
 import Nav from "@/components/Nav";
 import Image from "next/image";
-import { Key, useEffect, useState } from "react";
+import { Key, use, useEffect, useState } from "react";
 import bg from "../assests/subheader.jpg";
 import axios from "axios";
 import Countdown from "react-countdown";
 import NewItem from "@/utilities/NewItem";
+import NewItemsLoading from "@/utilities/NewItemsLoading";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 
 function Explore() {
   const [nfts, setNfts] = useState<[]>([]);
-
-  const [itemstoShow, setitemstoShow] = useState<number>(8)
-
+  const [filter, setFilter] = useState<string>("");
+  const [filterdata, setFilterData] = useState<[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [itemstoShow, setitemstoShow] = useState<number>(8);
+  console.log(filter);
   useEffect(() => {
+    setLoading(true);
     async function fecthnfts() {
       const { data } = await axios.get(
         "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore"
       );
 
       setNfts(data);
+      setLoading(false);
     }
 
     fecthnfts();
   }, []);
-  console.log(nfts);
+
+  useEffect(() => {
+    setLoading(true);
+
+    async function filterNfts() {
+      const { data } = await axios.get(
+        `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${filter}`
+      );
+      setNfts(data);
+      setLoading(false);
+    }
+
+    filterNfts();
+  }, [filter]);
+
   return (
     <div>
       <Head>
@@ -44,39 +63,57 @@ function Explore() {
         </div>
       </div>
 
-
-
       <div className="p-4 md:ml-10 mt-10">
- 
-
-        <select className="border rounded-lg p-3 text-sm ">
-            <option className="text-sm">Default</option>
-            <option className="text-sm">Price, Low to High</option>
-            <option className="text-sm">Price, High to Low</option>
-            <option className="text-sm">Most Liked</option>
-
+        <select
+          onChange={(e) => setFilter(e.target.value)}
+          className="border rounded-lg p-3 text-sm "
+        >
+          <option className="text-sm" value="">
+            Default
+          </option>
+          <option className="text-sm" value="price_low_to_high">
+            Price, Low to High
+          </option>
+          <option className="text-sm" value="price_high_to_low">
+            Price, High to Low
+          </option>
+          <option className="text-sm" value="likes_high_to_low">
+            Most Liked
+          </option>
         </select>
-
       </div>
+      {loading ? (
+        <>
+        <div className="p-3  flex flex-wrap  ">
 
-      <div className="p-3  flex flex-wrap  ">
-        {
-          nfts.map((item: { id: Key}) => <NewItem item={item} key={item.id} />).slice(0,itemstoShow)
-        }
+          {new Array(8).fill(0).map(() => (
+            <NewItemsLoading  />
+          ))}
+        </div>
+        </>
+      ) : (
+        <>
+          <div className="p-3  flex flex-wrap  ">
+            {nfts
+              .map((item: { id: Key }) => <NewItem item={item} key={item.id} />)
+              .slice(0, itemstoShow)}
+          </div>
 
+          {itemstoShow !== 16 && (
+            <div className="flex justify-center mt-10 ">
+              <button
+                onClick={() => setitemstoShow(itemstoShow + 4)}
+                className="text-white bg-purple py-2 px-4 rounded-lg  hover:shadow-purple hover:shadow-lg transition-shadow ease-linear duration-200"
+              >
+                {" "}
+                Load More
+              </button>
+            </div>
+          )}
+        </>
+      )}
 
-        
-      </div>
-
-      {
-        (itemstoShow !== 16) && <div className="flex justify-center mt-10 ">
-
-        <button onClick={() => setitemstoShow(itemstoShow + 4)} className="text-white bg-purple py-2 px-4 rounded-lg  hover:shadow-purple hover:shadow-lg transition-shadow ease-linear duration-200"> Load More</button>
-  
-  </div>
-      }
-
-<Footer />
+      <Footer />
     </div>
   );
 }

@@ -3,13 +3,16 @@ import logo from "../assests/Ultraverse.png"
 import { Bars3Icon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from "@heroicons/react/24/solid"
 import {useState} from 'react'
+import Link from "next/link"
 function Nav() {
 
   const [openMenu, setOpenMenu] = useState<Boolean>(false)
   return (
     <div className="  z-50 fixed  top-0 left-0 w-full flex justify-between items-center px-4  py-3 md:px-[100px]  md:py-8 border-b  box-border  bg-white">
       <div className="flex space-x-8 items-center">
-        <Image src={logo} alt='logo' width={200} height={200} className='w-[170px] md:w-[200px] bg-white'/>
+      <Link href={'/'}>
+      <Image src={logo} alt='logo' width={200} height={200} className='w-[170px] md:w-[200px] bg-white'/>
+      </Link> 
         <input placeholder="search item here.." className="text-sm bg-slate-200 p-2 px-4 rounded-lg hidden md:flex"></input>
       </div>
       <div className="flex ">
