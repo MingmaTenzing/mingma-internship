@@ -15,6 +15,10 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const date:number = 1679969468128;
+  console.log(
+  date   / 1000 /60 /60 )
+  console.log( Date.now() / 1000 / 60 /60 )
   return (
     <main className=''>
       <Head>

@@ -1,18 +1,32 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 import { HeartIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
+import Countdown from "react-countdown"
 
 interface Props{
     item: any
 }
 function NewItem({item}: Props) {
+ 
   return (
 
-    <div className="hover:shadow-lg transition-shadow ease-linear duration-500 group mt-6 relative  md:max-w-[300px] m-auto border p-4 rounded-lg">
-    <div className="relative z-10">
-
+    <div className="hover:shadow-lg transition-shadow ease-linear duration-500 group mt-6 relative  w-[300px]  m-auto border p-4 rounded-lg">
+    <div className="relative z-10 flex justify-between">
+      <div>
+   
     <Image src={item.authorImage} alt='author' width={200} height={200} className='w-10  rounded-full border-purple  hover:border-4  transition-all ease-linear duration-200' />
     <CheckIcon className="w-4 absolute top-6 left-6  bg-purple text-white rounded-full" />
+
+      </div>
+{
+  item.expiryDate &&  <div className="border flex justify-center items-center px-3 rounded-full border-purple">
+
+   
+  <Countdown zeroPadTime={0} date={item.expiryDate } />
+  </div>
+}
+   
+
     </div>
 
     

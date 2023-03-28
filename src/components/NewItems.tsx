@@ -29,6 +29,8 @@ function NewItems() {
 
     }, [])
 
+    console.log(items);
+
     const settings = {
         dots: true,
         infinite: true,

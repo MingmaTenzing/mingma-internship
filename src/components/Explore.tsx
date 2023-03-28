@@ -1,8 +1,12 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import bg from "../assests/bg-shape-1.jpg"
 import nftbg from "../assests/nft.png"
 
+
+
 function Explore() {
+  const router = useRouter();
   return (
     <div className="h-[100vh] bg-[url('../assests/bg-shape-1.jpg')] bg-cover bg-no-repeat bg-center px-4"> 
     <div className="mt-[60px] md:mt-[100px] ">
@@ -11,7 +15,7 @@ function Explore() {
       <p className=" text-purple font-bold ">GIGALAND MARKET</p>
       <h1 className="text-[40px] md:text-5xl leading-10  text font-[700]">Create, sell or collect digital items.</h1>
      <p className=" opacity-70">Unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique and therefore not interchangeable</p>
-    <button className=" bg-purple text-white p-1 px-10 rounded-lg   hover:shadow-lg  hover:shadow-purple  transition-all ease-linear duration-200 "  >Explore</button  >
+    <button onClick={() => router.push("/explore")} className=" bg-purple text-white p-1 px-10 rounded-lg   hover:shadow-lg  hover:shadow-purple  transition-all ease-linear duration-200 "  >Explore</button  >
 
       </div>
 
