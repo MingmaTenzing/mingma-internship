@@ -18,7 +18,6 @@ function TopSellers() {
 
     getTopSellers();
   }, []);
-  console.log(topSellers);
 
   return (
     <div className="mt-[100px]">

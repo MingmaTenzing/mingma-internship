@@ -15,7 +15,6 @@ function Explore() {
   const [filterdata, setFilterData] = useState<[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [itemstoShow, setitemstoShow] = useState<number>(8);
-  console.log(filter);
   useEffect(() => {
     setLoading(true);
     async function fecthnfts() {
