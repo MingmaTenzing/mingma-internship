@@ -9,6 +9,7 @@ import eth from "../../assests/ethereum.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import ItemDetailsLoading from "@/utilities/ItemDetailsLoading";
 
 interface nft{
   id: number;
@@ -31,10 +32,10 @@ interface nft{
 
 
 
-function itemDetails() {
+function ItemDetails() {
   const [nftId, setnftId] = useState<String | String[]>();
 const [nftDetails, setnftDetails] = useState<nft>()
-
+const [loading, setLoading] = useState<Boolean>(false);
 
 
   const router = useRouter();
@@ -49,12 +50,14 @@ if(router.isReady){
 
 
 useEffect(() => {
+  setLoading(true);
   async function fetchnftDetails() {
 
     if(nftId) {
 
       const {data} = await axios.get(`https://us-central1-nft-cloud-functions.cloudfunctions.net/itemDetails?nftId=${nftId}`)
     setnftDetails(data);
+    setLoading(false);
     }
   }
 
@@ -68,7 +71,9 @@ console.log(nftDetails);
   return (
     <div>
       <Nav />
-      <div className="p-8  mt-20 md:mt-[140px] md:flex md:justify-center  md:space-x-8 ">
+      {
+        loading ? (<div className="mt-20 md:mt-[140px]">      <ItemDetailsLoading />
+        </div>): ( <div className="p-8  mt-20 md:mt-[140px] md:flex md:justify-center  md:space-x-8 ">
         <div>
           <Image
             src={ nftDetails?.nftImage || nftimg}
@@ -148,10 +153,13 @@ console.log(nftDetails);
             </div>
           </div>
         </div>
-      </div>
+      </div>)
+      }
+     
+
 
       <Footer />
     </div>
   );
 }
-export default itemDetails;
+export default ItemDetails;
