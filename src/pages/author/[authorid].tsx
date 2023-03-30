@@ -20,7 +20,7 @@ interface author {
   tag: string;
 }
 
-function authorid() {
+function AuthorId() {
   const [authorDetails, setauthorDetails] = useState<author>();
   const [authorId, setauthorId] = useState<string | String[]>();
   const [followers, setfollowers] = useState<number>();
@@ -113,7 +113,7 @@ function authorid() {
                       onClick={() => {
                         navigator.clipboard.writeText(authorDetails?.address);
                       }}
-                      className="px-2 text-sm bg-gray-300 text-gray-600"
+                      className=" hidden lg:flex px-2 text-sm bg-gray-300 text-gray-600"
                     >
                       Copy
                     </button>
@@ -159,4 +159,4 @@ function authorid() {
     </div>
   );
 }
-export default authorid;
+export default AuthorId;

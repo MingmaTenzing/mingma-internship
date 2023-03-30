@@ -43,7 +43,7 @@ function Footer() {
     <form className="flex items-center ">
     <input className="border p-2 " placeholder="enter your email"></input><button disabled className=" cursor-not-allowed px-4  py-2 bg-purple"><ArrowLongRightIcon className="text-white  w-7" /></button>
     </form>
-    <p className="text-gray-500 text-sm"> Your email is safe with us. We don't spam.</p>
+    <p className="text-gray-500 text-sm"> Your email is safe with us. We don&apos;t spam.</p>
 
       </div>
       

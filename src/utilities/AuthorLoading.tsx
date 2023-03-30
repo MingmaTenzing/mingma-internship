@@ -26,7 +26,7 @@ function AuthorLoading() {
     </div>
      <div className="p-3 md:flex md:flex-wrap">
      {
-         new Array(8).fill(0).map((_, index) => <NewItemsLoading />)
+         new Array(8).fill(0).map((_, index) => <NewItemsLoading key={index}/>)
      }
 
  </div>
