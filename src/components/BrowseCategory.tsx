@@ -1,16 +1,22 @@
 import { CircleStackIcon, TableCellsIcon } from "@heroicons/react/24/solid"
 import { CreditCardIcon, GlobeAltIcon, GlobeAsiaAustraliaIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { MinusIcon, MusicalNoteIcon, PhotoIcon, PlayCircleIcon } from "@heroicons/react/24/solid"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 function BrowseCategory() {
+  useEffect(() => {
+AOS.init();
+  }, [])
   return (
-    <div className="mt-[120px] px-5">
+    <div className="mt-[120px] w-full max-w-1200px px-5">
          <div className="flex flex-col items-center space-y-3">
         <h1 className=" font-[800] text-3xl text-center">Browse Category</h1>
         <div className="w-[100px] h-[1px] bg-purple"></div>
       </div>
 
-      <div className="mt-10 grid  grid-cols-2  gap-3 m-auto max-w-[320px]  md:flex md:max-w-[90%] lg:max-w-full md:justify-center md:space-x-4 ">
+      <div  data-aos-duration="1000" className="mt-10 grid  grid-cols-2  gap-3 m-auto max-w-[320px]  md:flex md:max-w-[90%] lg:max-w-full md:justify-center md:space-x-4 ">
         <div className="rounded-lg cursor-pointer group hover:bg-darkpurple  w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
             <div className="flex flex-col items-center space-y-2 ">
             <PhotoIcon className="w-[50px] text-purple group-hover:text-white transition-all ease-linear duration-300"/>
@@ -19,7 +25,7 @@ function BrowseCategory() {
 
 
         </div>
-        <div className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
+        <div  className=" rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
             <div className="flex flex-col items-center space-y-2 ">
 
             <MusicalNoteIcon className="w-[50px] text-purple group-hover:text-white transition-all ease-linear duration-300"/>
@@ -28,7 +34,7 @@ function BrowseCategory() {
 
 
         </div>
-        <div className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
+        <div  className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
             <div className="flex flex-col items-center space-y-2 ">
 
             <MagnifyingGlassIcon className="w-[50px] text-purple group-hover:text-white transition-all ease-linear duration-300"/>
@@ -37,7 +43,7 @@ function BrowseCategory() {
 
 
         </div>
-        <div className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
+        <div  className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
             <div className="flex flex-col items-center space-y-2 ">
 
             <GlobeAsiaAustraliaIcon className="w-[50px] text-purple group-hover:text-white transition-all ease-linear duration-300"/>
@@ -46,7 +52,7 @@ function BrowseCategory() {
 
 
         </div>
-        <div className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
+        <div  className="rounded-lg cursor-pointer group hover:bg-darkpurple w-[140px] lg:w-[200px] bg-purple bg-opacity-10 p-4">
             <div className="flex flex-col items-center space-y-2 group-hover:text-white">
 
             <CreditCardIcon className="w-[50px] text-purple group-hover:text-white transition-all ease-linear duration-300"/>

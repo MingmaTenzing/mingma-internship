@@ -5,10 +5,13 @@ import authorimg from "../assests/author_thumbnail.jpg"
 import { CheckIcon } from "@heroicons/react/24/outline";
 import AuthorProfile from "@/utilities/AuthorProfile";
 import TopSellerAuthor from "@/utilities/TopSellerAuthor";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function TopSellers() {
   const [topSellers, setTopSellers] = useState<[]>([]);
 
   useEffect(() => {
+    AOS.init();
     async function getTopSellers() {
       const { data } = await axios.get(
         "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
@@ -26,7 +29,8 @@ function TopSellers() {
         <div className="w-[100px] h-[1px] bg-purple"></div>
       </div>
 
-<div className="mt-10 flex flex-col space-y-4 px-10  md:mx-auto md:gap-2 md:items-center md:grid md:grid-cols-3  md:justify-center lg:grid-cols-4 md:max-w-[700px] lg:max-w-[1200px]   ">
+<div data-aos="fade-up" data-aos-duration="1000"
+      className="mt-10 flex flex-col space-y-4 px-10  md:mx-auto md:gap-2 md:items-center md:grid md:grid-cols-3  md:justify-center lg:grid-cols-4 md:max-w-[700px] lg:max-w-[1200px]   ">
       {
         topSellers?.map((author: { id: Key}) => <TopSellerAuthor key={author.id} author={author} />)
       }
