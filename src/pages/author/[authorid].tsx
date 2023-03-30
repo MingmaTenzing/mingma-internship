@@ -71,7 +71,7 @@ function AuthorId() {
     <div>
       <Nav />
       {loading ? (
-        <div className="mt-[100px]">
+        <div className="mt-10">
           <AuthorLoading />
         </div>
       ) : (

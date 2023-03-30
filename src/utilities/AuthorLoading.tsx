@@ -3,6 +3,9 @@ import NewItemsLoading from "./NewItemsLoading"
 function AuthorLoading() {
   return (
     <div>
+        <div className=" w-full h-[200px] md:h-[300px]  bg-gray-400 animate-pulse">
+
+        </div>
     <div className="p-4 md:px-16 space-y-4 animate-pulse md:flex md:items-center md:justify-between">
       
         
