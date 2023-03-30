@@ -19,8 +19,11 @@ function Nav() {
         <Bars3Icon onClick={() => setOpenMenu(!openMenu)} className="lg:hidden w-7 text-white font-[800] bg-[#403f83]" />
         <div className="hidden lg:flex space-x-6 font-bold items-center">
           
-        <p>Home</p>
-        <p>Explore</p>
+       <Link href={"/"}>  <p>Home</p> </Link> 
+       <Link href={"/explore"}>
+       
+       <p>Explore</p>
+       </Link> 
         <button className="bg-purple text-white p-2 hover:shadow-lg hover:shadow-purple transition-all ease-linear duration-200 rounded-lg">Connect Wallet</button>
         </div>
 

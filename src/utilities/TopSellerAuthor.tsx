@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AuthorProfile from "./AuthorProfile"
 
 interface Props {
@@ -12,10 +13,14 @@ function TopSellerAuthor({author} : Props) {
     <div className="flex space-x-4">
     <p>{author.id}</p> 
     
-<AuthorProfile image={author.authorImage}/>
+<Link href={`/author/${author.authorId}`}>
+ <AuthorProfile image={author.authorImage}/>
+</Link>
     </div>
     <div className="">
-    <h1 className="font-bold">{author.authorName}</h1>
+    <Link href={`/author/${author.authorId}`}>
+  <h1 className="font-bold hover:text-purple cursor-pointer">{author.authorName}</h1>
+</Link>
     <p className=" font-light  text-gray-600"><span>{author.price}</span>ETH</p>
     </div>
 

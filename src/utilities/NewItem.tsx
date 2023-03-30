@@ -1,13 +1,15 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 import { HeartIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import Countdown from "react-countdown"
 
 interface Props{
     item: any
+    authorimage: any;
 }
-function NewItem({item}: Props) {
+function NewItem({item, authorimage }: Props) {
   const router = useRouter()
  
   return (
@@ -16,7 +18,7 @@ function NewItem({item}: Props) {
     <div className="relative z-10 flex justify-between">
       <div>
    
-    <Image src={item.authorImage} alt='author' width={200} height={200} className='w-10 cursor-pointer  rounded-full border-purple  hover:border-4  transition-all ease-linear duration-200' />
+    <Image src={item.authorImage || authorimage} alt='author' width={200} height={200} className='w-10 cursor-pointer  rounded-full border-purple  hover:border-4  transition-all ease-linear duration-200' />
     <CheckIcon className="w-4 absolute top-6 left-6  bg-purple text-white rounded-full" />
 
       </div>
@@ -49,7 +51,7 @@ function NewItem({item}: Props) {
 
     </div>
   
-        <Image onClick={() => router.push(`item-details/${item.nftId}`)} src={item.nftImage} alt='nft' width={400} height={400}  className='  cursor-pointer rounded-lg max-w-[320px]   group-hover:scale-105 transition-all ease-linear duration-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   p-6'/>
+      <Link href={`/item-details/${item.nftId}`}> <Image  src={item.nftImage} alt='nft' width={400} height={400}  className='  cursor-pointer rounded-lg max-w-[320px]   group-hover:scale-105 transition-all ease-linear duration-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2   p-6'/> </Link> 
 </div>
     )
 }

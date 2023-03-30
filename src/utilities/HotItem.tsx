@@ -1,5 +1,6 @@
 import { CheckIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import Link from "next/link";
 import { useRouter } from "next/router";
 import authorbanner from "../assests/author_banner.jpg"
 import  authorimage from "../assests/author_thumbnail.jpg"
@@ -24,7 +25,10 @@ function HotItem({item}: Props) {
           
     
     <div className="absolute  bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col ">
-          <Image src={item.authorImage} alt="author thumbnail" width={200} height={200} className=' cursor-pointer rounded-full w-14 border-4 border-white '/>
+         <Link href={`/author/${item.authorId}`}>
+         <Image src={item.authorImage} alt="author thumbnail" width={200} height={200} className=' cursor-pointer rounded-full w-14 border-4 border-white '/>
+         
+         </Link> 
           <CheckIcon className="w-5 bg-purple text-white font-bold rounded-full p-1 -mt-5 ml-8" />
     
     </div>

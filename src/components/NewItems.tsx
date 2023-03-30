@@ -29,7 +29,6 @@ function NewItems() {
 
     }, [])
 
-    console.log(items);
 
     const settings = {
         dots: true,
@@ -100,7 +99,7 @@ function NewItems() {
   
   
          {
-          items.map((item: { id: Key}) => <NewItem key={item.id} item={item} />)
+          items.map((item: { id: Key}) => <NewItem key={item.id} authorimage={null} item={item} />)
          }
           </Slider>
   

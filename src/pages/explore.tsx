@@ -85,8 +85,8 @@ function Explore() {
         <>
         <div className="p-3  flex flex-wrap  ">
 
-          {new Array(8).fill(0).map(() => (
-            <NewItemsLoading  />
+          {new Array(8).fill(0).map((_, index) => (
+            <NewItemsLoading  key={index} />
           ))}
         </div>
         </>
@@ -94,7 +94,7 @@ function Explore() {
         <>
           <div className="p-3  flex flex-wrap  ">
             {nfts
-              .map((item: { id: Key }) => <NewItem item={item} key={item.id} />)
+              .map((item: { id: Key }) => <NewItem item={item} authorimage={null} key={item.id} />)
               .slice(0, itemstoShow)}
           </div>
 
