@@ -64,7 +64,6 @@ function HotCollections() {
     }
     fetchHotCollections();
   }, []);
-  console.log(hotCollections)
 
   return (
     <div className="mt-[120px]">

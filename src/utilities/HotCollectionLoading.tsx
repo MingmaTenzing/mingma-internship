@@ -1,5 +1,6 @@
 
 function HotCollectionLoading() {
+  
   return (
     <div>
          <div className=" animate-pulse border mt-10 max-w-[300px] my-4 mx-2 md:w-[340px]  hover:shadow-lg transition-all ease-linear duration-150 overflow-hidden rounded-lg relative m-auto ">

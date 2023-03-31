@@ -42,7 +42,6 @@ function AuthorId() {
     }
   }
 
-  console.log(authorId);
   useEffect(() => {
     if (router.isReady) {
       const id = router.query.authorid;
@@ -66,7 +65,6 @@ function AuthorId() {
     fetchauthorDetails();
   }, [authorId]);
 
-  console.log(authorDetails);
   return (
     <div>
       <Nav />

@@ -57,7 +57,6 @@ function ItemDetails() {
 
     fetchnftDetails();
   }, [nftId]);
-  console.log(nftDetails);
 
   return (
     <div>
